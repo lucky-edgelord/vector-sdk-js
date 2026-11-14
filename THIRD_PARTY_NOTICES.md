@@ -18,6 +18,6 @@ release with `cargo about` or `cargo license` against `Cargo.lock`, and ship it 
 
 ## Compatibility with other projects
 
-discord.py (MIT), aoi.js (Apache-2.0), Bot Designer for Discord (BDFD, BDScript 2) and Discord are referenced only
+discord.js (Apache-2.0), aoi.js (Apache-2.0), Bot Designer for Discord (BDFD, BDScript 2) and Discord are referenced only
 to describe API and syntax compatibility. No source code from those projects is included here, and this project is
 not affiliated with or endorsed by any of them.
