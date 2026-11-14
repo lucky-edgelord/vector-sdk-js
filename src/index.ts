@@ -28,5 +28,9 @@ export * from "./structures/Voice";
 export { AttachmentBuilder, MessagePayload, type MessageCreateOptions, type MessageEditOptions, type FileInput, type BufferResolvable } from "./sending";
 
 /** discord.js exports `version`; this is the vector-sdk version. */
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-export const version: string = require("../package.json").version;
+function readVersion(): string {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  for (const p of ["../package.json", "../../package.json"]) try { return require(p).version; } catch { /* next layout */ }
+  return "0.0.0";
+}
+export const version: string = readVersion();

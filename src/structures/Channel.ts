@@ -66,6 +66,8 @@ export interface TextBasedChannel extends BaseChannel {
   awaitMessages(options?: AwaitMessagesOptions): Promise<Collection<string, Message>>;
   createWebhook(options: { name: string; avatar?: string | null; reason?: string }): Promise<any>;
   fetchWebhooks(): Promise<Collection<string, any>>;
+  /** Vector: share a Mini App (`.xdc` file path). Resolves to the app info. */
+  sendMiniApp(path: string): Promise<any>;
 }
 
 function applyTextBased(cls: abstract new (...args: any[]) => BaseChannel): void {
@@ -109,6 +111,10 @@ function applyTextBased(cls: abstract new (...args: any[]) => BaseChannel): void
   p.fetchWebhooks = async function (this: TextBasedChannel) {
     const { Webhook } = await import("./Webhook");
     return Webhook.forChannel(this as any);
+  };
+  p.sendMiniApp = async function (this: TextBasedChannel, file: string) {
+    const [id, kind] = this._target();
+    return value(this.client._native(), "channel_send_xdc", { id, kind: kind ?? undefined, path: file });
   };
   Object.defineProperty(p, "lastMessage", {
     get(this: TextBasedChannel) {

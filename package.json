@@ -25,7 +25,7 @@
   "scripts": {
     "build:native": "cd native && cargo build --release && node ../scripts/copy-native.js",
     "build": "tsc -p tsconfig.json",
-    "test": "node --test --test-reporter=spec dist-test/",
+    "test": "node --test --test-reporter=spec dist-test/test/*.test.js",
     "pretest": "tsc -p tsconfig.test.json",
     "lint": "tsc -p tsconfig.json --noEmit"
   },

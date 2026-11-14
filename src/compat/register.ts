@@ -14,6 +14,7 @@ const ALIASES: Record<string, string> = {
   "@discordjs/voice": path.join(ROOT, "structures", "Voice.js"),
   "discord-api-types/v10": path.join(ROOT, "compat", "discordjs.js"),
   "discord-api-types/v9": path.join(ROOT, "compat", "discordjs.js"),
+  "aoi.js": path.join(ROOT, "aoijs", "index.js"),
 };
 
 const M = Module as unknown as { _resolveFilename: (req: string, ...rest: unknown[]) => string; __vectorPatched?: boolean };
