@@ -1,0 +1,38 @@
+{
+  "name": "vector-sdk",
+  "version": "0.1.0",
+  "description": "An unofficial, community-maintained, discord.js-style library for Vector messenger bots, powered by the official Rust vector_sdk",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./register": "./dist/compat/register.js",
+    "./webhooks": { "types": "./dist/webhooks/index.d.ts", "default": "./dist/webhooks/index.js" },
+    "./bdscript": { "types": "./dist/bdscript/index.d.ts", "default": "./dist/bdscript/index.js" },
+    "./aoijs": { "types": "./dist/aoijs/index.d.ts", "default": "./dist/aoijs/index.js" },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "vector-run": "bin/vector-run.js",
+    "vector-port": "bin/vector-port.js",
+    "vector-webhooks": "bin/vector-webhooks.js",
+    "vector-bdscript": "bin/vector-bdscript.js"
+  },
+  "files": ["dist", "bin", "native/index.js", "native/*.node", "README.md", "LICENSE", "THIRD_PARTY_NOTICES.md"],
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "build:native": "cd native && cargo build --release && node ../scripts/copy-native.js",
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test --test-reporter=spec dist-test/",
+    "pretest": "tsc -p tsconfig.test.json",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": ["vector", "nostr", "bot", "discord.js", "messenger", "sdk"],
+  "repository": { "type": "git", "url": "https://github.com/lucky-edgelord/vector-sdk-js" },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0"
+  }
+}
