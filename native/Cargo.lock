@@ -7994,9 +7994,9 @@ dependencies = [
 
 [[package]]
 name = "vector-core"
-version = "0.11.0"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d6ab3229424d646c4dfbad12a211e0bea498ccc58924ebd18a16327ed408141"
+checksum = "d1b50de53d143cd34ebf0f1d535c06ecd3e3ef2088bdeb1fac4c358121788d60"
 dependencies = [
  "aes 0.9.4",
  "argon2",
@@ -8072,9 +8072,9 @@ dependencies = [
 
 [[package]]
 name = "vector-media"
-version = "0.1.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "700194c997d50b2c7c3c846b5631091f0161dc779df514b6f00c6a3a957ee026"
+checksum = "ff6b4cc3209256d1b0df59cd52cec1c2f1e031b3e2b74a4854ce479f6f6e90de"
 dependencies = [
  "async-trait",
  "iroh",
@@ -8104,9 +8104,9 @@ dependencies = [
 
 [[package]]
 name = "vector_sdk"
-version = "0.12.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1ae9ff233d26a5307145e7b2f4407ae5b7ecca39471f83f98aca87067ea784d"
+checksum = "a49a5222a3fc5f49c64ba635f2ebf794a66f00b1e2a11621f79c07c4e1803f04"
 dependencies = [
  "nostr-sdk",
  "serde",
@@ -8334,6 +8334,8 @@ dependencies = [
 [[package]]
 name = "webpki-roots"
 version = "1.0.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7265c9301c16a8711c992c2d8da90ee77ef54b1ed51482d6dfeb00dc756b1297"
 dependencies = [
  "rustls-pki-types",
 ]
